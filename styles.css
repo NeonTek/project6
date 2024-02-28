@@ -1,0 +1,50 @@
+:root {
+    --background-color1: linear-gradient( gray ,aqua);
+    --background-color2: gray;
+    --text-color1: whitesmoke;
+  }
+  body {
+    background: var(--background-color1);
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .title {
+    text-align: center;
+    height: 20vh;
+    color: var(--text-color1);
+  }
+  .palindrome {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 70vw;
+    left: 0px;
+    height: 60vh;
+    background-color: var(--background-color2);
+  }
+  .definition {
+    text-align: center;
+  }
+  .palindrome-input {
+    height: 8vh;
+    border: 1px solid white;
+  
+  }
+  .palindrome-btn {
+    padding: 3px;
+    margin: 5px;
+    width: 15vw; 
+  }
+  .hidden {
+    display: none;
+  }
+  .result-div {
+    background: var(--background-color1);
+    width: 50vw;
+    height: 30vh;
+    text-align: center;
+  }
