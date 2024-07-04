@@ -1,50 +1,58 @@
+/*
+Matthew 7:7 Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:
+
+8 For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened.
+*/
 :root {
-    --background-color1: linear-gradient( gray ,aqua);
-    --background-color2: gray;
-    --text-color1: whitesmoke;
-  }
-  body {
-    background: var(--background-color1);
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .title {
-    text-align: center;
-    height: 20vh;
-    color: var(--text-color1);
-  }
-  .palindrome {
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 70vw;
-    left: 0px;
-    height: 60vh;
-    background-color: var(--background-color2);
-  }
-  .definition {
-    text-align: center;
-  }
-  .palindrome-input {
-    height: 8vh;
-    border: 1px solid white;
-  
-  }
-  .palindrome-btn {
-    padding: 3px;
-    margin: 5px;
-    width: 15vw; 
-  }
-  .hidden {
-    display: none;
-  }
-  .result-div {
-    background: var(--background-color1);
-    width: 50vw;
-    height: 30vh;
-    text-align: center;
-  }
+  --background-color1: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%) repeat;
+    --background-color2: white;
+--text-color1: whitesmoke;
+  --border-color1: gray;
+}
+body {
+  background: var(--background-color1);
+  background-size: 100vw;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  text-align: center;
+  height: 20vh;
+  color: var(--text-color1);
+}
+.palindrome {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 70vw;
+  left: 0px;
+  height: 60vh;
+}
+.definition {
+  text-align: center;
+}
+.palindrome-input {
+  height: 8vh;
+  border: 1px solid white;
+
+}
+.palindrome-btn {
+  padding: 3px;
+  margin: 5px;
+  width: 15vw; 
+}
+.hidden {
+  display: none;
+}
+.result-div {
+  border: 3px solid var(--border-color1);
+  border-radius: 15px;
+  background: var(--background-color2);
+  width: 50vw;
+  height: 30vh;
+  text-align: center;
+}

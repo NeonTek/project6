@@ -1,40 +1,43 @@
-const checkButton = document.getElementById("check-btn");
-const textInput = document.getElementById("text-input");
-const result = document.getElementById("result");
+/*
+Matthew 7:7 Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you:
 
-const palindromeChecker = (input) => {
-  //check valid input
-  if (input === '') {
-    alert('Please input a value');
+8 For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened.
+*/
+const testPhraseInput = document.getElementById('text-input');
+const checkBtn = document.getElementById('check-btn');
+const result = document.getElementById('result');
+
+const checker = (string) => {
+  if(string === "") {
+    alert("Please input a value");
     return;
   }
+  
 
-  result.replaceChildren()
-  //initialize input string
+  let invalidInput = /[^a-zA-Z0-9]/g;
+  let testablePhrase = string.toLowerCase()
+                             .replace(invalidInput, "");
+  console.log(testablePhrase)
+  let reversedPhrase = string.split('')
+                             .reverse()
+                             .join('')
+                             .replace(invalidInput, "")
+                             .toLowerCase();
+  
+  let results = `${string} ${testablePhrase === reversedPhrase? "is" : "is not"} a palindrome`;
 
-  const cleanStr = input.replace(/[^A-Z0-9a-z]/gi, '').toLowerCase();
+  result.style.display = "block";
+  result.innerHTML = results;
+  
 
-  //palindrome check
+}
 
-  const resultMsg =`<strong>${input}</strong> ${
-    cleanStr === [...cleanStr].reverse().join('') ? 'is' : 'is not'} a palindrome`
+checkBtn.addEventListener('click', function() {
+  checker(testPhraseInput.value);
+})
 
-  //results
-
-  const rTag = document.createElement('p');
-  rTag.innerHTML = resultMsg;
-  result.appendChild(rTag);
-  result.classList.remove('hidden');
-};
-
-checkButton.addEventListener("click", () => {
-  palindromeChecker(textInput.value);
-  textInput = "";
-});
-
-textInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter') {
-    palindromeChecker(textInput.value);
-    textInput.value = '';
+testPhraseInput.addEventListener('keydown', function(e) {
+  if(e.key ==="Enter") {
+    checker(testPhraseInput.value);
   }
-});
+})
